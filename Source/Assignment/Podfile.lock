@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (4.4.0)
+  - AlamofireNetworkActivityIndicator (2.1.0):
+    - Alamofire (~> 4.1)
+  - IQKeyboardManagerSwift (4.0.8)
+  - MBProgressHUD (1.0.0)
+  - SwiftMessages (3.2.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - AlamofireNetworkActivityIndicator (~> 2.0)
+  - IQKeyboardManagerSwift
+  - MBProgressHUD (~> 1.0.0)
+  - SwiftMessages
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
+  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SwiftMessages: d114d273978678c0dce036f30273865af7303a35
+
+PODFILE CHECKSUM: a01a2cddee72a577a60c8da0e56692fc4efd7d17
+
+COCOAPODS: 1.2.1
