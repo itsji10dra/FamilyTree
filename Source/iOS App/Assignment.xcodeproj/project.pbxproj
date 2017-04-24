@@ -44,7 +44,6 @@
 		10216DBB1EADE2750028753E /* AddConnectionVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConnectionVCTests.swift; sourceTree = "<group>"; };
 		10216DBD1EADE2830028753E /* RootInfoVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootInfoVCTests.swift; sourceTree = "<group>"; };
 		10216DBF1EADE2920028753E /* GraphVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphVCTests.swift; sourceTree = "<group>"; };
-		10216DD11EAE45070028753E /* NetworkManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		88124BA4F34AF2EDB89DCDAE /* Pods-AssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssignmentTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AssignmentTests/Pods-AssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
 		ADD5AE69809551C66ACBAA85 /* Pods_AssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D15533361EACB9170035DBC0 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
@@ -169,7 +168,6 @@
 		D1F2B12B1EAA8E92007AFD0B /* AssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				10216DD11EAE45070028753E /* NetworkManagerTests.swift */,
 				10216DBD1EADE2830028753E /* RootInfoVCTests.swift */,
 				10216DBF1EADE2920028753E /* GraphVCTests.swift */,
 				10216DBB1EADE2750028753E /* AddConnectionVCTests.swift */,
