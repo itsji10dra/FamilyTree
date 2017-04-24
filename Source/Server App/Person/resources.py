@@ -21,7 +21,7 @@ class PersonResource(ModelResource):
         authentication = BasicAuthentication()
         authorization = DjangoAuthorization()
         filtering = {
-            "ssn": 'exact',
+            'ssn': 'exact',
         }
 
     def get_object_list(self, request):
