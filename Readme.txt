@@ -15,18 +15,20 @@ Installation:
 
 1. To start Django App (i.e. Server)
 	a) Open terminal
-	a) cd path-to-project (i.e. /Source/Server App/)
-	b) python manage.py runserver
-	c) Open 'http://localhost:8000/' in your browser.
-	d) Login using username: admin, password: admin12345
-	e) Using admin panel, you can add person & relationships.
+	b) cd path-to-project (i.e. /Source/Server App/)
+	c) python manage.py runserver
+	
+	- This will start server on your machine. Now to see admin dashboard,
+	a) Open 'http://localhost:8000/' in your browser.
+	b) Login using username: admin, password: admin12345
+	c) Using admin panel, you can add person & relationships.
 
 2. Launch iOS App 
 	a) Open terminal
 	b) cd path-to-project (i.e. /Source/iOS App/)
 	c) pod install
 	d) open Assignment.xcworkspace
-	e) Select 'Simulator/Device', & hit command+R
+	e) Select 'Simulator/Device' in Xcode, & hit command+R
 
 
 Database:
