@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Assignment
 
 class SpyNetworkDelegate: NetworkDelegate {
     
@@ -27,14 +28,14 @@ class SpyNetworkDelegate: NetworkDelegate {
 
 class NetworkManagerTests: XCTestCase {
     
-    var rootVC: RootInfoRootVC!
+    var rootVC: RootInfoVC!
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        rootVC = storyboard.instantiateViewController(withIdentifier: "RootInfoRootVC") as! RootInfoRootVC
+        rootVC = storyboard.instantiateViewController(withIdentifier: "RootInfoVC") as! RootInfoVC
         let _ = rootVC.view
     }
     
@@ -51,13 +52,14 @@ class NetworkManagerTests: XCTestCase {
         let network = NetworkManager.shared
         network.delegate = spyDelegate
 
-        let expect = expectation(description: "RootInfoRootVC calls the delegate as the result of an async method completion")
+        let expect = expectation(description: "RootInfoVC calls the delegate as the result of an async method completion")
         spyDelegate.asyncExpectation = expect
         
-        let number = NSNumber(value: 1001)
+        let number = NSNumber(value: 1002)
         rootVC.loadData(with: number)
         
-        waitForExpectations(timeout: 5) { error in
+        waitForExpectations(timeout: 20) { error in
+            
             if let error = error {
                 XCTFail("waitForExpectationsWithTimeout errored: \(error)")
             }
@@ -68,7 +70,6 @@ class NetworkManagerTests: XCTestCase {
             }
             
             XCTAssertTrue(person.ssn == number)
-            
         }
     }
 }

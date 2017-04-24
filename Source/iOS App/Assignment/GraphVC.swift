@@ -45,9 +45,9 @@ class GraphVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Net
         }
     }
     
-    //MARK: - Private Methods
+    //MARK: - Internal Methods
 
-    private func loadDataSource() {
+    internal func loadDataSource() {
         
         if let personInfo = DataManager.shared.rootPerson {
             personArray.removeAll(keepingCapacity: true)
@@ -57,6 +57,8 @@ class GraphVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Net
         }
     }
     
+    //MARK: - Private Methods
+
     private func loadDataSourceFromServer() {
         
         if let savedSSN = DataManager.shared.lastLoadedSSN {

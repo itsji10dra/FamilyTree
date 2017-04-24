@@ -62,6 +62,12 @@ class Relationship {
     var relationType: RelationType!
     var person: Person!
     
+    init(with id: NSNumber, type: RelationType, with person: Person) {
+        self.relationId = id
+        self.relationType = type
+        self.person = person
+    }
+    
     init(with infoObject: [String:AnyObject]) {
         
         if let id = infoObject["id"] as? NSNumber,
