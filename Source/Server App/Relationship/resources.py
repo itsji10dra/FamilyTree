@@ -15,7 +15,7 @@ class RelationshipResource(ModelResource):
 
     class Meta:
         queryset = Relationship.objects.all()
-        fields = ['person']
+        fields = ['id', 'person']
         allowed_methods = ['delete']
         resource_name = 'relation'
         include_resource_uri = False
@@ -23,6 +23,7 @@ class RelationshipResource(ModelResource):
         authentication = BasicAuthentication()
         authorization = DjangoAuthorization()
         filtering = {
+            'id': 'exact',
             'person': ALL_WITH_RELATIONS,
         }
 
