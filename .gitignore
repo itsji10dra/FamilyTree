@@ -1,15 +1,15 @@
 # Cocoapods
-Source/Assignment/Pods/*
+Source/iOS App/Pods/*
 
 # Xcode
-Source/Assignment/Assignment.xcworkspace/*
-Source/Assignment/DerivedData/
+Source/iOS App/Assignment.xcworkspace/*
+Source/iOS App/DerivedData/
 
 # Mac OS X Finder
 .DS_Store
 
 #build products
-Source/Assignment/build/
+Source/iOS App/build/
 *.[oa]
 
 # repositories
@@ -31,4 +31,4 @@ xcuserdata/
 # python
 __pycache__/
 *.py[cod]
-Source/FamilyTree/.idea/
+Source/Server App/.idea/
