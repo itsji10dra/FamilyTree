@@ -63,15 +63,15 @@ class RootInfoVC: UIViewController, NetworkDelegate, AddConnectionDelegate {
         present(alertController, animated: true, completion: nil)
     }
         
-    //MARK: - Private Methods
+    //MARK: - Internal Methods
     
-    private func loadData(with ssnId: NSNumber) {
+    internal func loadData(with ssnId: NSNumber) {
         let networkManager = NetworkManager.shared
         networkManager.delegate = self
         networkManager.loadPersonInfo(with: ssnId)
     }
     
-    private func updateUI(with person: Person?) {
+    internal func updateUI(with person: Person?) {
         labelSSN.text = person?.ssn.stringValue ?? kNotAvailable
         labelName.text = person?.name ?? kNotAvailable
         labelDateOfBirth.text = person?.dateBirth ?? kNotAvailable
@@ -80,6 +80,19 @@ class RootInfoVC: UIViewController, NetworkDelegate, AddConnectionDelegate {
         labelNoOfRelations.text = person != nil ? String(person!.relationships.count) : kNotAvailable
     }
     
+    internal func cleanUpContent() {
+        
+        let dataManager = DataManager.shared
+        dataManager.lastLoadedSSN = nil
+        dataManager.rootPerson = nil
+        
+        updateUI(with: nil)
+        showLoginOptions()
+        ((tabBarController?.viewControllers?.last as? UINavigationController)?.viewControllers.first as? GraphVC)?.refreshContent = true
+    }
+
+    //MARK: - Private Methods
+
     private func showLoginOptions() {
         
         let title = "Please select to continue !!"
@@ -131,19 +144,6 @@ class RootInfoVC: UIViewController, NetworkDelegate, AddConnectionDelegate {
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true, completion: nil)
-    }
-    
-    //MARK: - Internal Methods
-
-    internal func cleanUpContent() {
-        
-        let dataManager = DataManager.shared
-        dataManager.lastLoadedSSN = nil
-        dataManager.rootPerson = nil
-
-        updateUI(with: nil)
-        showLoginOptions()
-        ((tabBarController?.viewControllers?.last as? UINavigationController)?.viewControllers.first as? GraphVC)?.refreshContent = true
     }
     
     //MARK: - Navigation

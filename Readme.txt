@@ -1,6 +1,6 @@
 Pre-Requisites:
 
-iOS App:
+iOS App
 	a) Xcode v8/8+
 	b) Pods v1.1.1 (https://guides.cocoapods.org/using/getting-started.html)
 
