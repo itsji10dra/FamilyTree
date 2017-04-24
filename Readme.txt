@@ -19,6 +19,7 @@ Installation:
 	b) python manage.py runserver
 	c) Open 'http://localhost:8000/' in your browser.
 	d) Login using username: admin, password: admin12345
+	e) Using admin panel, you can add person & relationships.
 
 2. Launch iOS App 
 	a) Open terminal
@@ -28,8 +29,13 @@ Installation:
 	e) Select 'Simulator/Device', & hit command+R
 
 
+Database:
+It is included in server app, no additional measures require to configure it.
+
+
 Known Issues:
+Issues mentioned below are in Server app. (but in future, app might need an update if any of this issue gets fix)
 
 1. If you delete a family member from graph, instead just deleting associated relations, it also delete person from database (from 'person' table).
-2. If there is a relation from Son to Father in 'relation' table, and also a relation from Father to Son, it creates a infinite loop issue while fetching info for SON via API. To avoid this, make sure not to add 2 way relation in 'relation' table.
+2. If there is a relation from Son to Father in 'relation' table, and also a relation from Father to Son, it creates a infinite loop issue while fetching info for SON via API. To avoid this, make sure not to add 2 way relation in 'relation' table (via admin panel or via iOS app).
   
