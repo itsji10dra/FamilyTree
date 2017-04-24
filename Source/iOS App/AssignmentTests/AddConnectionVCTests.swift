@@ -36,8 +36,8 @@ class AddConnectionVCTests: XCTestCase {
         vc.updateUI(with: person1)
         XCTAssert(vc.textfieldSSN.text == person1.ssn.stringValue, "'textfieldSSN' doesn't show right text")
         XCTAssert(vc.textfieldName.text == person1.name, "'textfieldName' doesn't show right text")
-        XCTAssert(vc.textfieldDOB.text == kNotAvailable, "'textfieldDOB' doesn't show right text")
-        XCTAssert(vc.textfieldDOD.text == kNotAvailable, "'textfieldDOD' doesn't show right text")
+        XCTAssert(vc.textfieldDOB.text == "", "'textfieldDOB' doesn't show right text")
+        XCTAssert(vc.textfieldDOD.text == "", "'textfieldDOD' doesn't show right text")
         XCTAssert(vc.buttonMale.isSelected, "'buttonMale' not highlighted")
         XCTAssert(!vc.buttonFemale.isSelected, "'buttonFemale' is highlighted")
         
@@ -46,7 +46,7 @@ class AddConnectionVCTests: XCTestCase {
         XCTAssert(vc.textfieldSSN.text == person2.ssn.stringValue, "'textfieldSSN' doesn't show right text")
         XCTAssert(vc.textfieldName.text == person2.name, "'textfieldName' doesn't show right text")
         XCTAssert(vc.textfieldDOB.text == person2.dateBirth, "'textfieldDOB' doesn't show right text")
-        XCTAssert(vc.textfieldDOD.text == kNotAvailable, "'textfieldDOD' doesn't show right text")
+        XCTAssert(vc.textfieldDOD.text == "", "'textfieldDOD' doesn't show right text")
         XCTAssert(!vc.buttonMale.isSelected, "'buttonMale' is highlighted")
         XCTAssert(vc.buttonFemale.isSelected, "'buttonFemale' not highlighted")
 
@@ -54,7 +54,7 @@ class AddConnectionVCTests: XCTestCase {
         vc.updateUI(with: person3)
         XCTAssert(vc.textfieldSSN.text == person3.ssn.stringValue, "'textfieldSSN' doesn't show right text")
         XCTAssert(vc.textfieldName.text == person3.name, "'textfieldName' doesn't show right text")
-        XCTAssert(vc.textfieldDOB.text == kNotAvailable, "'textfieldDOB' doesn't show right text")
+        XCTAssert(vc.textfieldDOB.text == "", "'textfieldDOB' doesn't show right text")
         XCTAssert(vc.textfieldDOD.text == person3.dateDeath, "'textfieldDOD' doesn't show right text")
         XCTAssert(!vc.buttonMale.isSelected, "'buttonMale' is highlighted")
         XCTAssert(!vc.buttonFemale.isSelected, "'buttonFemale' is highlighted")

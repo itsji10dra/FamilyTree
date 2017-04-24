@@ -120,8 +120,8 @@ class AddConnectionVC: UIViewController, NetworkDelegate, UIPickerViewDelegate, 
         
         textfieldSSN.text = person.ssn.stringValue
         textfieldName.text = person.name
-        textfieldDOB.text = person.dateBirth ?? kNotAvailable
-        textfieldDOD.text = person.dateDeath ?? kNotAvailable
+        textfieldDOB.text = person.dateBirth
+        textfieldDOD.text = person.dateDeath
         buttonMale.isSelected = person.sex == .male
         buttonFemale.isSelected = person.sex == .female
     }
