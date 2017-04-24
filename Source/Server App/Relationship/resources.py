@@ -11,11 +11,11 @@ from Person.resources import PersonResource
 
 class RelationshipResource(ModelResource):
 
-    person = fields.ForeignKey(PersonResource, 'person')
+    to_person = fields.ForeignKey(PersonResource, 'person')
 
     class Meta:
         queryset = Relationship.objects.all()
-        fields = ['id', 'person']
+        fields = ['id', 'to_person']
         allowed_methods = ['delete']
         resource_name = 'relation'
         include_resource_uri = False
@@ -24,7 +24,7 @@ class RelationshipResource(ModelResource):
         authorization = DjangoAuthorization()
         filtering = {
             'id': 'exact',
-            'person': ALL_WITH_RELATIONS,
+            'to_person': ALL_WITH_RELATIONS,
         }
 
 v1_api_relation = Api(api_name='v1')

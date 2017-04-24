@@ -57,6 +57,13 @@ class GraphVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Net
         }
     }
     
+    internal func cleanUpContent() {
+        
+        personArray.removeAll(keepingCapacity: false)
+        tabBarController?.selectedIndex = 0
+        ((tabBarController?.viewControllers?.first as? UINavigationController)?.viewControllers.first as? RootInfoVC)?.cleanUpContent()
+    }
+
     //MARK: - Private Methods
 
     private func loadDataSourceFromServer() {
@@ -69,11 +76,15 @@ class GraphVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Net
         }
     }
 
-    private func deletePerson(with personInfo: Person) {
+    private func deletePerson(with info: PersonViewModel) {
+        
+        guard let relationId = info.relationId else {
+            return
+        }
         
         let networkManager = NetworkManager.shared
         networkManager.delegate = self
-        networkManager.deletePersonInfo(with: personInfo.ssn)
+        networkManager.deleteRealtion(with: relationId, to: info)
     }
 
     //MARK: - UITableViewDataSource
@@ -105,18 +116,23 @@ class GraphVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Net
         return true
     }
     
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return indexPath.row == 0 ? "Clear" : "Delete\nRelation"
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-
+            
+            let isRootPerson = indexPath.row == 0
+            
             let infoObj = personArray[indexPath.row]
 
-            let title = "Are you sure you want to delete " + infoObj.name + " from family?"
-            let message = "It will also delete all relations associated with it."
+            let message = isRootPerson ? "Are you sure you want to clear existing root person from app?" : "Are you sure you want to delete " + infoObj.name + " as relation?"
             
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alert !!", message: message, preferredStyle: .alert)
             
-            let defaultAction = UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-                self.deletePerson(with: infoObj)
+            let defaultAction = UIAlertAction(title: isRootPerson ? "Clear" : "Delete", style: .destructive, handler: { action in
+                isRootPerson ? self.cleanUpContent() : self.deletePerson(with: infoObj)
             })
             alertController.addAction(defaultAction)
             
@@ -222,27 +238,18 @@ class GraphVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Net
 
     //MARK: - NetworkDelegate - Deleting Relations
 
-    func willStartDeletingPersonInfo(with ssnId: NSNumber) {
+    func willStartDeletingRelation(with relationId: NSNumber) {
         MBProgressHUD.showAdded(to: view, animated: true)
     }
     
-    func didDeletedPersonInfo(with ssnId: NSNumber) {
-
+    func didDeletedRelation(with relationId: NSNumber) {
         MBProgressHUD.hide(for: view, animated: true)
-
-        let dataManager = DataManager.shared
         
-        if dataManager.rootPerson?.ssn == ssnId {   //If root person is deleted
-            personArray.removeAll(keepingCapacity: false)
-            tabBarController?.selectedIndex = 0
-            ((tabBarController?.viewControllers?.first as? UINavigationController)?.viewControllers.first as? RootInfoVC)?.cleanUpContent()
-        }
-        else {  //Else reload data from server
-            loadDataSourceFromServer()
-        }
+        //Let's refresh list
+        loadDataSourceFromServer()
     }
     
-    func didReceiveErrorWhileDeletingPersonInfo(with ssnId: NSNumber, error: Error?) {
+    func didReceiveErrorWhileDeletingRelation(with relationId: NSNumber, error: Error?) {
         MBProgressHUD.hide(for: view, animated: true)
     }
 }

@@ -40,9 +40,9 @@ protocol NetworkDelegate: class {
     @objc optional func didReceiveErrorWhileAddingRelationInfo(for person: Person, error: Error?)
     
     //Deleting Relations
-    @objc optional func willStartDeletingPersonInfo(with ssnId: NSNumber)
-    @objc optional func didDeletedPersonInfo(with ssnId: NSNumber)
-    @objc optional func didReceiveErrorWhileDeletingPersonInfo(with ssnId: NSNumber, error: Error?)
+    @objc optional func willStartDeletingRelation(with relationId: NSNumber)
+    @objc optional func didDeletedRelation(with relationId: NSNumber)
+    @objc optional func didReceiveErrorWhileDeletingRelation(with relationId: NSNumber, error: Error?)
 }
 
 class NetworkManager {
@@ -182,21 +182,22 @@ class NetworkManager {
     
     //MARK: - Deleting Relations
     
-    func deletePersonInfo(with ssnId: NSNumber) {
+    func deleteRealtion(with relationId: NSNumber, to person: Person) {
 
-        self.delegate?.willStartDeletingPersonInfo?(with: ssnId)
+        self.delegate?.willStartDeletingRelation?(with: relationId)
         
-        let deleteURL = personAPI + ssnId.stringValue + "/"
+        let parameters: Parameters = ["id": relationId.stringValue,
+                                      "person": person.ssn]
         
-        Alamofire.request(deleteURL, method: .delete).responseJSON { response in
+        Alamofire.request(relationAPI, method: .delete, parameters: parameters).responseJSON { response in
             
             DispatchQueue.main.async {
                 if response.response?.statusCode == 204 {
-                        self.delegate?.didDeletedPersonInfo?(with: ssnId)
+                        self.delegate?.didDeletedRelation?(with: relationId)
                 }
                 else {
                     let error = response.result.error
-                    self.delegate?.didReceiveErrorWhileReceiveingPersonInfo?(with: ssnId, error: error)
+                    self.delegate?.didReceiveErrorWhileDeletingRelation?(with: relationId, error: error)
                 }
             }
         }
