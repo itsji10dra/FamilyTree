@@ -14,11 +14,22 @@ Python App
 Installation:
 
 1. To start Django App (i.e. Server)
-	a) cd path-to-project
+	a) Open terminal
+	a) cd path-to-project (i.e. /Source/Server App/)
 	b) python manage.py runserver
+	c) Open 'http://localhost:8000/' in your browser.
+	d) Login using username: admin, password: admin12345
 
 2. Launch iOS App 
-	a) cd path-to-project
-	b) pod install
-	c) open CrossoverAssignment.xcworkspace
-	d) Select 'simulator', & hit command+R
+	a) Open terminal
+	b) cd path-to-project (i.e. /Source/iOS App/)
+	c) pod install
+	d) open Assignment.xcworkspace
+	e) Select 'Simulator/Device', & hit command+R
+
+
+Known Issues:
+
+1. If you delete a family member from graph, instead just deleting associated relations, it also delete person from database (from 'person' table).
+2. If there is a relation from Son to Father in 'relation' table, and also a relation from Father to Son, it creates a infinite loop issue while fetching info for SON via API. To avoid this, make sure not to add 2 way relation in 'relation' table.
+  
