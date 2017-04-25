@@ -149,7 +149,7 @@ class AddConnectionVC: UIViewController, NetworkDelegate, UIPickerViewDelegate, 
             Message.showErrorMessage(text: "Date of birth cant be earlier than date of death.")
             return false
         }
-        
+                
         return true
     }
 
@@ -313,5 +313,15 @@ class AddConnectionVC: UIViewController, NetworkDelegate, UIPickerViewDelegate, 
     
     func didReceiveErrorWhileAddingRelationInfo(for person: Person, error: Error?) {
         MBProgressHUD.hide(for: view, animated: true)
+
+        if error != nil {
+            var message: String = error!.localizedDescription
+            
+            if let error = error as? CustomError {
+                message = error.localizedDescription
+            }
+            
+            Message.showErrorMessage(text: message)
+        }
     }
 }
