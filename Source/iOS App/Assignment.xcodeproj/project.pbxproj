@@ -20,7 +20,7 @@
 		D1B625271EAABAAB004D4ACE /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B625261EAABAAB004D4ACE /* Enums.swift */; };
 		D1B625291EAABEDA004D4ACE /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B625281EAABEDA004D4ACE /* PersonViewModel.swift */; };
 		D1F2B1181EAA8E92007AFD0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2B1171EAA8E92007AFD0B /* AppDelegate.swift */; };
-		D1F2B11A1EAA8E92007AFD0B /* RootInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2B1191EAA8E92007AFD0B /* RootInfoVC.swift */; };
+		D1F2B11A1EAA8E92007AFD0B /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F2B1191EAA8E92007AFD0B /* ProfileVC.swift */; };
 		D1F2B11D1EAA8E92007AFD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F2B11B1EAA8E92007AFD0B /* Main.storyboard */; };
 		D1F2B11F1EAA8E92007AFD0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F2B11E1EAA8E92007AFD0B /* Assets.xcassets */; };
 		D1F2B1221EAA8E92007AFD0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F2B1201EAA8E92007AFD0B /* LaunchScreen.storyboard */; };
@@ -55,7 +55,7 @@
 		D1B625281EAABEDA004D4ACE /* PersonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		D1F2B1141EAA8E92007AFD0B /* Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F2B1171EAA8E92007AFD0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D1F2B1191EAA8E92007AFD0B /* RootInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInfoVC.swift; sourceTree = "<group>"; };
+		D1F2B1191EAA8E92007AFD0B /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		D1F2B11C1EAA8E92007AFD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1F2B11E1EAA8E92007AFD0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1F2B1211EAA8E92007AFD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		D1F2B1421EAAA1DE007AFD0B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D1F2B1191EAA8E92007AFD0B /* RootInfoVC.swift */,
+				D1F2B1191EAA8E92007AFD0B /* ProfileVC.swift */,
 				D1F2B13E1EAAA1C6007AFD0B /* GraphVC.swift */,
 				D15B69FB1EAB8B8A00355F3B /* AddConnectionVC.swift */,
 			);
@@ -409,7 +409,7 @@
 				D15B69FC1EAB8B8A00355F3B /* AddConnectionVC.swift in Sources */,
 				D1F2B1381EAA8EA7007AFD0B /* Person.swift in Sources */,
 				D1B625271EAABAAB004D4ACE /* Enums.swift in Sources */,
-				D1F2B11A1EAA8E92007AFD0B /* RootInfoVC.swift in Sources */,
+				D1F2B11A1EAA8E92007AFD0B /* ProfileVC.swift in Sources */,
 				D15533371EACB9170035DBC0 /* CustomError.swift in Sources */,
 				D1F2B13F1EAAA1C6007AFD0B /* GraphVC.swift in Sources */,
 				D1F2B1471EAAAF7E007AFD0B /* GraphCell.swift in Sources */,

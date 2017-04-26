@@ -1,5 +1,5 @@
 //
-//  RootInfoVC.swift
+//  ProfileVC.swift
 //  Assignment
 //
 //  Created by Jitendra on 22/04/17.
@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class RootInfoVC: UIViewController, NetworkDelegate, AddConnectionDelegate {
+class ProfileVC: UIViewController, NetworkDelegate, AddConnectionDelegate {
 
     //MARK: - IBOutlets
 

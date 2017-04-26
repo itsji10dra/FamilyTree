@@ -1,5 +1,5 @@
 //
-//  RootInfoVCTests.swift
+//  ProfileVCTests.swift
 //  Assignment
 //
 //  Created by Jitendra on 24/04/17.
@@ -9,16 +9,16 @@
 import XCTest
 @testable import Assignment
 
-class RootInfoVCTests: XCTestCase {
+class ProfileVCTests: XCTestCase {
     
-    var vc: RootInfoVC!
+    var vc: ProfileVC!
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        vc = storyboard.instantiateViewController(withIdentifier: "RootInfoVC") as! RootInfoVC
+        vc = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
         let _ = vc.view
     }
     

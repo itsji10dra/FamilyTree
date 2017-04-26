@@ -32,7 +32,7 @@
         <scene sceneID="GaV-98-miB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0dI-vg-ffE" userLabel="Nav Controller (Root)" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Root Person" image="root" id="Zqq-Jc-7Mx"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="root" id="Zqq-Jc-7Mx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="820-N0-JSc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="1316" y="422"/>
         </scene>
-        <!--Root Person-->
+        <!--Profile-->
         <scene sceneID="qqI-RT-bXe">
             <objects>
-                <viewController storyboardIdentifier="RootInfoVC" id="0jT-1P-XKJ" customClass="RootInfoVC" customModule="Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="0jT-1P-XKJ" userLabel="Profile" customClass="ProfileVC" customModule="Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1wl-ox-hpX"/>
                         <viewControllerLayoutGuide type="bottom" id="ubk-9Z-iOG"/>
@@ -184,7 +184,7 @@
                             <constraint firstItem="dgn-RZ-ZfF" firstAttribute="centerY" secondItem="HN5-Hf-MmD" secondAttribute="centerY" id="ZKl-1v-LQV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Root Person" id="WCj-ky-WmI">
+                    <navigationItem key="navigationItem" title="Profile" id="WCj-ky-WmI">
                         <barButtonItem key="leftBarButtonItem" title="Clear" id="a8u-DZ-VKm">
                             <connections>
                                 <action selector="clearAction:" destination="0jT-1P-XKJ" id="dg7-EX-UCg"/>
@@ -617,6 +617,6 @@
         <image name="root" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G6Y-dV-Q7r"/>
+        <segue reference="kAH-wc-9hx"/>
     </inferredMetricsTieBreakers>
 </document>

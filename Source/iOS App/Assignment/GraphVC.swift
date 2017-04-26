@@ -61,7 +61,7 @@ class GraphVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Net
         
         personArray.removeAll(keepingCapacity: false)
         tabBarController?.selectedIndex = 0
-        ((tabBarController?.viewControllers?.first as? UINavigationController)?.viewControllers.first as? RootInfoVC)?.cleanUpContent()
+        ((tabBarController?.viewControllers?.first as? UINavigationController)?.viewControllers.first as? ProfileVC)?.cleanUpContent()
     }
 
     //MARK: - Private Methods
