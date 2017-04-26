@@ -33,6 +33,7 @@ class AddConnectionVC: UIViewController, NetworkDelegate, UIPickerViewDelegate, 
     var inputMode: InputMode = .addingRelation
     var mainPerson: Person!
     weak var delegate: AddConnectionDelegate?
+    lazy var registeredSSNs = [NSNumber]()
     
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -134,7 +135,7 @@ class AddConnectionVC: UIViewController, NetworkDelegate, UIPickerViewDelegate, 
         }
         
         guard let ssnText = textfieldSSN.text, !ssnText.isEmpty,
-            let _ = Int(ssnText) else {
+            let ssnInteger = Int(ssnText) else {
             Message.showErrorMessage(text: "Please fill in valid SSN.")
             return false
         }
@@ -146,8 +147,21 @@ class AddConnectionVC: UIViewController, NetworkDelegate, UIPickerViewDelegate, 
         
         if let dateBirth = selectedDOB, let dateDeath = selectedDOD,
             dateBirth > dateDeath {
-            Message.showErrorMessage(text: "Date of birth cant be earlier than date of death.")
+            Message.showErrorMessage(text: "Date of birth can't be later than date of death.")
             return false
+        }
+        
+        if DataManager.shared.rootPerson?.ssn.intValue == ssnInteger {
+            Message.showErrorMessage(text: "You cannot add relation to yourself.")
+            return false
+        }
+        
+        if inputMode == .addingRoot {
+            let enteredSSN = NSNumber(value: ssnInteger)
+            if registeredSSNs.contains(enteredSSN) {
+                Message.showErrorMessage(text: "SSN Id already exist. Kindly go back & chose 'Existing User' from options.")
+                return false
+            }
         }
                 
         return true
@@ -254,6 +268,7 @@ class AddConnectionVC: UIViewController, NetworkDelegate, UIPickerViewDelegate, 
         }
         else if inputMode == .addingRoot {
             Message.showErrorMessage(text: "SSN Id already exist. Kindly go back & chose 'Existing User' from options.")
+            registeredSSNs.append(ssnId)
         }
     }
     
@@ -272,10 +287,8 @@ class AddConnectionVC: UIViewController, NetworkDelegate, UIPickerViewDelegate, 
     func didAddedPersonInfo(with ssnId: NSNumber, person: Person) {
         MBProgressHUD.showAdded(to: view, animated: true)
         
-        if inputMode == .addingRoot
-        {
+        if inputMode == .addingRoot {
             let dataManager = DataManager.shared
-            dataManager.lastLoadedSSN = ssnId
             dataManager.rootPerson = person
         }
         

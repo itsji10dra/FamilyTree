@@ -12,12 +12,15 @@ import Alamofire
 class DataManager {
     
     static let shared = DataManager()
-    
-    var rootPerson: Person?
-    
+
     var lastLoadedSSN: NSNumber? {
-        set { UserDefaults.standard.set(newValue, forKey: kSavedSSNKey) }
-        get { return UserDefaults.standard.value(forKey: kSavedSSNKey) as? NSNumber }
+        return UserDefaults.standard.value(forKey: kSavedSSNKey) as? NSNumber
+    }
+
+    var rootPerson: Person? {
+        didSet {
+            UserDefaults.standard.set(rootPerson?.ssn, forKey: kSavedSSNKey)
+        }
     }
 }
 

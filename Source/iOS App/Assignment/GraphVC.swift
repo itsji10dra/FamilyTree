@@ -225,7 +225,6 @@ class GraphVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Net
         
         //Save in data manager
         let dataManager = DataManager.shared
-        dataManager.lastLoadedSSN = ssnId
         dataManager.rootPerson = person
         
         //load & reflect in UI.

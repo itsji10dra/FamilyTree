@@ -83,7 +83,6 @@ class RootInfoVC: UIViewController, NetworkDelegate, AddConnectionDelegate {
     internal func cleanUpContent() {
         
         let dataManager = DataManager.shared
-        dataManager.lastLoadedSSN = nil
         dataManager.rootPerson = nil
         
         updateUI(with: nil)
@@ -183,7 +182,6 @@ class RootInfoVC: UIViewController, NetworkDelegate, AddConnectionDelegate {
         
         //Person received, lets save it
         let dataManager = DataManager.shared
-        dataManager.lastLoadedSSN = ssnId
         dataManager.rootPerson = person
         
         //lets update UI
