@@ -15,9 +15,9 @@
 	d) django-tastypie v0.13.3  (sudo pip install django-tastypie==0.13.3)
 
 
-##Installation:
+## Installation:
 
-1. To start Django App (i.e. Server)
+* To start Django App (i.e. Server)
 	a) Open terminal
 	b) cd path-to-project (i.e. /Source/Server App/)
 	c) python manage.py runserver
@@ -27,7 +27,7 @@
 	b) Login using username: admin, password: admin12345
 	c) Using admin panel, you can add person & relationships.
 
-2. Launch iOS App 
+* Launch iOS App 
 	a) Open terminal
 	b) cd path-to-project (i.e. /Source/iOS App/)
 	c) pod install
@@ -36,7 +36,8 @@
 
 
 ## Database:
-It is included in server app, no additional measures require to configure it.
+
+* It is included in server app, no additional measures require to configure it.
 
 
 ## Known Issues:
