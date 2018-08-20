@@ -24,16 +24,17 @@
 	
 	- This will start server on your machine. Now to see admin dashboard,
 		
-		* Open 'http://localhost:8000/' in your browser.
-		* Login using username: admin, password: admin12345
-		* Using admin panel, you can add person & relationships.
+		1. Open 'http://localhost:8000/' in your browser.
+		2. Login using username: admin, password: admin12345
+		3. Using admin panel, you can add person & relationships.
 
 * Launch iOS App 
-	a) Open terminal
-	b) cd path-to-project (i.e. /Source/iOS App/)
-	c) pod install
-	d) open Assignment.xcworkspace
-	e) Select 'Simulator/Device' in Xcode, & hit command+R
+
+	1. Open terminal
+	2. cd path-to-project (i.e. /Source/iOS App/)
+	3. pod install
+	4. open Assignment.xcworkspace
+	5. Select 'Simulator/Device' in Xcode, & hit command+R
 
 
 ## Database:
