@@ -23,9 +23,9 @@
 	c) python manage.py runserver
 	
 	- This will start server on your machine. Now to see admin dashboard,
-	a) Open 'http://localhost:8000/' in your browser.
-	b) Login using username: admin, password: admin12345
-	c) Using admin panel, you can add person & relationships.
+		a) Open 'http://localhost:8000/' in your browser.
+		b) Login using username: admin, password: admin12345
+		c) Using admin panel, you can add person & relationships.
 
 * Launch iOS App 
 	a) Open terminal
