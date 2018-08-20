@@ -9,10 +9,10 @@
 
 ### Python App
 
-	a) Python v3.5.2 (https://www.python.org/downloads/release/python-352/)
-	b) Pip (sudo easy_install pip)
-	c) Django v1.9.6 (sudo pip install django==1.9.6)
-	d) django-tastypie v0.13.3  (sudo pip install django-tastypie==0.13.3)
+* Python v3.5.2 (https://www.python.org/downloads/release/python-352/)
+* Pip (sudo easy_install pip)
+* Django v1.9.6 (sudo pip install django==1.9.6)
+* django-tastypie v0.13.3  (sudo pip install django-tastypie==0.13.3)
 
 
 ## Installation:
@@ -23,9 +23,10 @@
 	c) python manage.py runserver
 	
 	- This will start server on your machine. Now to see admin dashboard,
-		a) Open 'http://localhost:8000/' in your browser.
-		b) Login using username: admin, password: admin12345
-		c) Using admin panel, you can add person & relationships.
+		
+		* Open 'http://localhost:8000/' in your browser.
+		* Login using username: admin, password: admin12345
+		* Using admin panel, you can add person & relationships.
 
 * Launch iOS App 
 	a) Open terminal
