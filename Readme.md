@@ -1,8 +1,8 @@
-#FamilyTree
+# FamilyTree
 
-##Pre-Requisites:
+## Pre-Requisites:
 
-###iOS App
+### iOS App
 
 * Xcode v8/8+
 * Pods v1.1.1 (https://guides.cocoapods.org/using/getting-started.html)
